@@ -1,9 +1,9 @@
 // create input that will later be pulled from textarea or input field 
 
 var aColor = new Array();
-aColor[0]="000000";
-aColor[1]="CCCCCC";
-aColor[2]="FFFFFF";
+aColor[0]='000000';
+aColor[1]='CCCCCC';
+aColor[2]='FFFFFF';
 
 function buildtable() {
 
@@ -14,7 +14,7 @@ for (var i=0;i<x;i++)
 
 	{
 	
-	document.write(aColor[i] + "<br>");
+	document.write(aColor[i] + '<br>');
 
 	// for loop through each color
 	for (var c in aColor)
@@ -24,7 +24,7 @@ for (var i=0;i<x;i++)
 		// apply formula to each combination
 		
 		
-		document.write(c + "x" + i + "<br>");
+		document.write(c + 'x' + i + '<br>');
 		}
 	
 	
