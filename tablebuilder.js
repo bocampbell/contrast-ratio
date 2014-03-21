@@ -25,7 +25,7 @@ for (var i=0;i<x;i++)
 		update();
 	
 	
-		document.write(background.value + 'x' + foreground.value + '<br>');
+		document.write(foreground.value + 'x' + background.value + '<br>');
 		}
 	
 	
