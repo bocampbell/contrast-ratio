@@ -1,25 +1,20 @@
-// create input that will later be pulled from textarea or input field 
+var aColor = document.getElementById('allcolors').value.split(',');
 
-var aColor = new Array();
-aColor[0]='#000000';
-aColor[1]='#CCCCCC';
-aColor[2]='#FFFFFF';
-
-// for loop through the total number of colors 
 var x = aColor.length
 
 for (var i=0;i<x;i++) 
 
 	{
 	
-	document.write(aColor[i] + '<br>');
+	document.write('in the top loop ' + aColor[i] + '<br>');
 
 	// for loop through each color
 	for (var c in aColor)
 		{
-		// Ratio N = c [ratio] aColor[i];
+		// Ratio = aColor[c] [ratio function] aColor[i];
 		
-		// apply formula to each combination
+		// fill input boxes with values since the function wants them this way
+		// change this shit
 		
 		background.value = aColor[c];
 		foreground.value = aColor[i];
