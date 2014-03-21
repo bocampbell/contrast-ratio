@@ -73,12 +73,17 @@ function updateLuminance(input) {
 	}
 }
 
+// foreground and background colors set in arrays of 4 numbers
+// r,g,b,transparency
+
 function update() {
 	if (foreground.color && background.color) {
 		if (foreground.value !== foreground.defaultValue || background.value !== background.defaultValue) {
 			window.onhashchange = null;
 
 			location.hash = '#' + encodeURIComponent(foreground.value) + '-on-' + encodeURIComponent(background.value);
+			// #hsla(200.0%,0%,.7)-on-#eee
+			
 			
 			setTimeout(function() {
 				window.onhashchange = hashchange;
@@ -111,6 +116,7 @@ function update() {
 		}
 		
 		$('strong', output).textContent = contrast.ratio;
+		document.write (contrast.ratio + 'xxx')
 		
 		var error = $('.error', output);
 		
