@@ -22,9 +22,6 @@ for (var i=0;i<x;i++)
 		foreground.value = aColor[i];
 		
 
-
-//function doIt() {
-
 //***************
 
 // Extend Math.round to allow for precision
@@ -193,7 +190,7 @@ _.GRAY = new _([127.5, 127.5, 127.5]);
 _.WHITE = new _([255,255,255]);
 
 })();
-//}
+
 
 		//doIt();
 		
