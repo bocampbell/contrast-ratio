@@ -10,7 +10,7 @@ for (var i=0;i<x;i++)
 
 	{
 	
-	document.write('in the top loop ' + aColor[i] + '<br>');
+	//document.write('in the top loop ' + aColor[i] + '<br>');
 
 	// for loop through each color
 	for (var c in aColor)
