@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contrast Ratio: Easily calculate color contrast ratios. Passing WCAG was never this easy!</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="prefixfree.min.js"></script>
+	<style>
+		input {
+	    font-size: 1.2em;
+	    border-radius: 4px;
+	    padding: 4px;
+		}
+	</style>
+</head>
+<body>
+
+	<section class="color-display" id="backgroundDisplay">
+		<label class="background" style="top: 40px;">
+		<input id="background" value="white" autofocus />
+	</label>
+
+	</section>
+	<section class="color-display" id="foregroundDisplay">
+		<label class="foreground" style="top: 40px;">
+			<input id="foreground" value="hsla(200,0%,0%,.7)" />
+		</label>
+		<button id="swap" style="display: none;"></button>
+	</section>
+
+	<div style="margin: 20px;">
+		<input id="numPeople" type="number" min="0" value="" placeholder="Pick a number" style="display: inline-block; width: 100px; float: left; margin: 0;"/>
+		<table style="width: 300px; float: left;">
+			<tr>
+				<td>
+					
+				</td>
+				<td>
+					Color A
+				</td> 
+				<td>
+					Color B
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Color A
+				</td>
+				<td>
+					<div id="result"></div>
+				</td> 
+				<td>
+					<output tabindex="0">
+						<strong>?</strong>
+						<span class="error"></span>
+					</output>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Color B
+					
+				</td>
+				<td>
+					<div id="result2"></div>
+				</td> 
+				<td>
+					<output tabindex="0">
+						<strong>?</strong>
+						<span class="error"></span>
+					</output>
+				</td>
+			</tr>
+
+		</table>
+	</div>
+
+	<script>
+	var n = document.getElementById("numPeople"),
+	    r = document.getElementById("result");
+	    f = document.getElementById("result2");
+
+	n.addEventListener("input", function(e) {
+	    r.innerHTML += "First Event";
+	}, false);
+
+	n.addEventListener("input", function(e) {
+	    f.innerHTML += "Second Event";
+	}, false);
+
+	</script>
+	
+
+	<script src="http://leaverou.github.com/incrementable/incrementable.js" id="incrementable" async></script>
+	<script src="color.js"></script>
+	<script src="contrast-ratio.js"></script>
+
+</body>
+</html>
