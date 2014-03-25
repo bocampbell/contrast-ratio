@@ -13,24 +13,27 @@
 	</style>
 </head>
 <body>
-
-	<section class="color-display" id="backgroundDisplay">
-		<label class="background" style="top: 40px;">
-		<input id="background" value="white" autofocus />
-	</label>
-
-	</section>
-	<section class="color-display" id="foregroundDisplay">
-		<label class="foreground" style="top: 40px;">
-			<input id="foreground" value="hsla(200,0%,0%,.7)" />
+	<div id="leasinputs">
+		<section class="color-display" id="backgroundDisplay">
+			<label class="background" style="top: 40px;">
+			<input id="background" value="white" autofocus />
 		</label>
-		<button id="swap" style="display: none;"></button>
-	</section>
 
-	<div style="margin: 20px;">
+		</section>
+		<section class="color-display" id="foregroundDisplay">
+			<label class="foreground" style="top: 40px;">
+				<input id="foreground" value="hsla(200,0%,0%,.7)" />
+			</label>
+			<button id="swap" style="display: none;"></button>
+		</section>
+	</div>
+
+	<div id="inputstuff">
 		<input id="numPeople" type="number" min="0" value="" placeholder="Pick a number" style="display: inline-block; width: 100px; float: left; margin: 0;"/>
 		<button id="submit">Go</button>
-		<table style="width: 300px; float: left;">
+	</div>
+	<div id="table">
+		<table>
 			<tr>
 				<td>
 					
@@ -71,6 +74,7 @@
 
 		</table>
 	</div>
+
 	<script src="jquery.js"></script>
 	<script>
 
