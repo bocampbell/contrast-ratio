@@ -118,6 +118,7 @@ function update() {
 		//return(contrast.ratio);
 		
 		$('strong', output).textContent = contrast.ratio;
+		document.write (contrast.ratio);
 		
 		var error = $('.error', output);
 		
@@ -256,16 +257,16 @@ foreground.oninput = function() {
 	}
 }
 
-swap.onclick = function() {
-	var backgroundColor = background.value;
-	background.value = foreground.value;
-	foreground.value = backgroundColor;
-	
-	colorChanged(background);
-	colorChanged(foreground);
-	
-	update();
-}
+//swap.onclick = function() {
+//	var backgroundColor = background.value;
+//	background.value = foreground.value;
+//	foreground.value = backgroundColor;
+//	
+//	colorChanged(background);
+//	colorChanged(foreground);
+//	
+//	update();
+//}
 
 window.encodeURIComponent = (function(){
 	var encodeURIComponent = window.encodeURIComponent;

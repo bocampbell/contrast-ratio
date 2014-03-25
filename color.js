@@ -18,8 +18,8 @@ for (var i=0;i<x;i++)
 		
 		// fill input boxes with values since the function wants them this way
 		
-		//background.value = aColor[c];
-		//foreground.value = aColor[i];
+		background.value = aColor[c];
+		foreground.value = aColor[i];
 		
 
 
