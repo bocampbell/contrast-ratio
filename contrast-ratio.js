@@ -115,8 +115,9 @@ function update() {
 			}
 		}
 		
+		//return(contrast.ratio);
+		
 		$('strong', output).textContent = contrast.ratio;
-		document.write (contrast.ratio + 'xxx')
 		
 		var error = $('.error', output);
 		
