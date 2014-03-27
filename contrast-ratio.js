@@ -118,7 +118,7 @@ function update() {
 		//return(contrast.ratio);
 		
 		$('strong', output).textContent = contrast.ratio;
-		document.write (contrast.ratio);
+		document.write (background.color + " " + foreground.color + " " + contrast.ratio + "</br>");
 		
 		var error = $('.error', output);
 		
@@ -231,17 +231,19 @@ function colorChanged(input) {
 	return false;
 }
 
+// function not being called, skipping hashchange unless we need it
 function hashchange() {
-
+	
 	if (location.hash) {
 		var colors = location.hash.slice(1).split('-on-');
-		
+
 		foreground.value = decodeURIComponent(colors[0]);
 		background.value = decodeURIComponent(colors[1]);
 	}
 	else {
 		foreground.value = foreground.defaultValue;
 		background.value = background.defaultValue;
+		foreground.value = "green";
 	}
 	
 	background.oninput();
@@ -286,4 +288,39 @@ window.decodeURIComponent = (function(){
 	};
 })();
 
-(onhashchange = hashchange)();
+// put textarea values into array aColor
+var aColor = document.getElementById('allcolors').value.split(',');
+
+// find out how many colors in the list
+var x = aColor.length
+
+
+// go color by color to compare each
+for (var i=0;i<x;i++) 
+
+	{
+	
+	document.write('in the top loop ' + aColor[i] + '<br>');
+
+	// for loop through each color
+	for (var c in aColor)
+		{
+		
+		// fill input boxes with values since the function wants them this way
+		
+		background.value = aColor[c];
+		foreground.value = aColor[i];
+		
+		background.oninput();
+		foreground.oninput();
+
+
+		//(onhashchange = hashchange)();
+	}
+}
+
+
+
+
+
+
