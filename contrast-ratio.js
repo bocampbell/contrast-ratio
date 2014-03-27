@@ -260,16 +260,16 @@ foreground.oninput = function() {
 	}
 }
 
-//swap.onclick = function() {
-//	var backgroundColor = background.value;
-//	background.value = foreground.value;
-//	foreground.value = backgroundColor;
-//	
-//	colorChanged(background);
-//	colorChanged(foreground);
-//	
-//	update();
-//}
+swap.onclick = function() {
+	var backgroundColor = background.value;
+	background.value = foreground.value;
+	foreground.value = backgroundColor;
+	
+	colorChanged(background);
+	colorChanged(foreground);
+	
+	update();
+}
 
 window.encodeURIComponent = (function(){
 	var encodeURIComponent = window.encodeURIComponent;
@@ -324,7 +324,7 @@ for (var i=0;i<x;i++) {
 		
 		background.oninput();
 		foreground.oninput();
-
+		
 		sTable += '</td>';
 
 		//(onhashchange = hashchange)();
