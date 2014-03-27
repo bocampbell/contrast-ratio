@@ -118,7 +118,8 @@ function update() {
 		//return(contrast.ratio);
 		
 		$('strong', output).textContent = contrast.ratio;
-		document.write (background.color + " " + foreground.color + " " + contrast.ratio + "</br>");
+		//document.write (aColor[1] + "---" + background.color + " " + foreground.color + " " + contrast.ratio + "</br>");
+		sTable += contrast.ratio;
 		
 		var error = $('.error', output);
 		
@@ -288,23 +289,33 @@ window.decodeURIComponent = (function(){
 	};
 })();
 
+
+var sTable = '<table>'
+
 // put textarea values into array aColor
 var aColor = document.getElementById('allcolors').value.split(',');
 
 // find out how many colors in the list
 var x = aColor.length
 
-
 // go color by color to compare each
-for (var i=0;i<x;i++) 
+for (var i=0;i<x;i++) {
 
-	{
-	
-	document.write('in the top loop ' + aColor[i] + '<br>');
+	// build header row
+	if (i==0) {
+		sTable += '<tr><th></th>';
+		for (var b in aColor) {
+			sTable += '<th style="background-color:' + aColor[b] + '">' + aColor[b] + '</th>';
+		}
+		sTable += '</tr>';
+	}
+
+	sTable += '<tr><td style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
 
 	// for loop through each color
-	for (var c in aColor)
-		{
+	for (var c in aColor) {
+		 
+		sTable += '<td>';
 		
 		// fill input boxes with values since the function wants them this way
 		
@@ -314,10 +325,18 @@ for (var i=0;i<x;i++)
 		background.oninput();
 		foreground.oninput();
 
+		sTable += '</td>';
 
 		//(onhashchange = hashchange)();
 	}
+
+	sTable += '</tr>';
 }
+sTable += '</table>';
+
+var tableDiv = document.getElementById('myContainer');
+tableDiv.innerHTML = sTable
+
 
 
 
