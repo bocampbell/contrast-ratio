@@ -321,12 +321,13 @@ function buildTable() {
 			background.value = aColor[c];
 			foreground.value = aColor[i];
 			
-			background.oninput();
-			foreground.oninput();
-			
+			colorChanged(background);
+			colorChanged(foreground);
+	
+			update();
+
 			sTable += '</td>';
 
-			//(onhashchange = hashchange)();
 		}
 
 		sTable += '</tr>';
@@ -341,6 +342,7 @@ function buildTable() {
 }
 
 document.getElementById('btnColor').onclick = buildTable;
+
 
 
 
