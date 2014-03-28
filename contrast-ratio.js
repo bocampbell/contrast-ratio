@@ -290,55 +290,62 @@ window.decodeURIComponent = (function(){
 })();
 
 
-var sTable = '<table>'
-
-// put textarea values into array aColor
-var aColor = document.getElementById('allcolors').value.split(',');
+var sTable = '';
 
 // find out how many colors in the list
-var x = aColor.length
+
 
 // go color by color to compare each
-for (var i=0;i<x;i++) {
 
-	// build header row
-	if (i==0) {
-		sTable += '<tr><th></th>';
-		for (var b in aColor) {
-			sTable += '<th style="background-color:' + aColor[b] + '">' + aColor[b] + '</th>';
+function buildTable() {
+	sTable = '<table>';
+
+	var aColor = document.getElementById('allcolors').value.split(',');
+	var x = aColor.length
+	
+	for (var i=0;i<x;i++) {
+
+		// build header row
+		if (i==0) {
+			sTable += '<tr><th></th>';
+			for (var b in aColor) {
+				sTable += '<th style="background-color:' + aColor[b] + '">' + aColor[b] + '</th>';
+			}
+			sTable += '</tr>';
 		}
+
+		sTable += '<tr><td style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
+
+		// for loop through each color
+		for (var c in aColor) {
+			 
+			sTable += '<td>';
+			
+			// fill input boxes with values since the function wants them this way
+			
+			background.value = aColor[c];
+			foreground.value = aColor[i];
+			
+			background.oninput();
+			foreground.oninput();
+			
+			sTable += '</td>';
+
+			//(onhashchange = hashchange)();
+		}
+
 		sTable += '</tr>';
 	}
+	sTable += '</table>';
 
-	sTable += '<tr><td style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
 
-	// for loop through each color
-	for (var c in aColor) {
-		 
-		sTable += '<td>';
-		
-		// fill input boxes with values since the function wants them this way
-		
-		background.value = aColor[c];
-		foreground.value = aColor[i];
-		
-		background.oninput();
-		foreground.oninput();
-		
-		sTable += '</td>';
+	var tableDiv = document.getElementById('myContainer');
+	tableDiv.innerHTML = sTable
 
-		//(onhashchange = hashchange)();
-	}
-
-	sTable += '</tr>';
+	sTable = "";
 }
-sTable += '</table>';
 
-var tableDiv = document.getElementById('myContainer');
-tableDiv.innerHTML = sTable
-
-
-
+document.getElementById('btnColor').onclick = buildTable;
 
 
 
