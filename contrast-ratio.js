@@ -292,11 +292,6 @@ window.decodeURIComponent = (function(){
 
 var sTable = '';
 
-// find out how many colors in the list
-
-
-// go color by color to compare each
-
 function buildTable() {
 	sTable = '<table>';
 
@@ -342,7 +337,7 @@ function buildTable() {
 	var tableDiv = document.getElementById('myContainer');
 	tableDiv.innerHTML = sTable
 
-	sTable = "";
+	sTable = '';
 }
 
 document.getElementById('btnColor').onclick = buildTable;
