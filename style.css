@@ -9,6 +9,7 @@ body {
 	text-align: center;
 	font: 150%/1.5 sans-serif;
 	color: black;
+	padding: 40px;
 }
 
 a {
@@ -138,11 +139,8 @@ output {
 		}
 	
 .color-display {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-	padding: 13em 1em 1em;
+	position: relative;
+	float: left;
 }
 	
 	.color-display h1,
@@ -162,15 +160,14 @@ output {
 	}
 
 	#backgroundDisplay {
-		left: 0;
-		right: 50%;
+		float: left;
 		text-align: right;
 		direction: rtl;
 		overflow: auto;
 	}
 	
 	#foregroundDisplay {
-		left: 50%;
+		left: 20%;
 		right: 0;
 		text-align: left;
 	}
@@ -262,13 +259,46 @@ button {
 		box-shadow: 0 1px hsla(0, 0%, 100%, .3),
 		            0 1px .3em .05em rgba(0,0,0,.6) inset;
 	}
+
 	
-.twitter-share-button {
-	position: absolute;
-	top: 10px;
-	right: 10px;
+.annoying {
+	position: relative;
 }
 
 canvas {
 	display: none;
 }
+
+#leas {
+	display: block;
+	float: left;
+	width: 100%;
+	height: 300px;
+}
+
+/* our shit */
+
+#bos {
+	float: left; 
+	display: block;
+	margin-top: 200px auto 0;
+	width: 100%;
+}
+
+#myContainer {
+	margin-top:50px;
+}
+
+#myContainer table {
+	min-width: 400px;
+	background: #fff;
+	border: 1px solid #000;
+	border-collapse:collapse;
+	margin: 0 auto;
+}
+
+#myContainer table, #myContainer th, #myContainer td {
+	border: 1px solid black;
+}
+
+
