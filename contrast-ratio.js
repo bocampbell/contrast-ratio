@@ -73,9 +73,6 @@ function updateLuminance(input) {
 	}
 }
 
-// foreground and background colors set in arrays of 4 numbers
-// r,g,b,transparency
-
 function update() {
 	if (foreground.color && background.color) {
 		if (foreground.value !== foreground.defaultValue || background.value !== background.defaultValue) {
@@ -115,10 +112,8 @@ function update() {
 			}
 		}
 		
-		//return(contrast.ratio);
-		
 		$('strong', output).textContent = contrast.ratio;
-		//document.write (aColor[1] + "---" + background.color + " " + foreground.color + " " + contrast.ratio + "</br>");
+
 		sTable += contrast.ratio;
 		
 		var error = $('.error', output);
@@ -295,7 +290,9 @@ var sTable = '';
 function buildTable() {
 	sTable = '<table>';
 
-	var aColor = document.getElementById('allcolors').value.split(',');
+	var aColor = document.getElementById('allcolors').value.split(/,(?![^(]*\))/g);
+	// use regex to split instead for commas inside of parenthesis
+	// /,(?![^(]*\))/g
 	var x = aColor.length
 	
 	for (var i=0;i<x;i++) {
@@ -320,7 +317,7 @@ function buildTable() {
 			
 			background.value = aColor[c];
 			foreground.value = aColor[i];
-			
+
 			colorChanged(background);
 			colorChanged(foreground);
 	
