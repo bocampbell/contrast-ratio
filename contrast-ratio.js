@@ -62,15 +62,20 @@ function rangeIntersect(min, max, upper, lower) {
 
 function updateLuminance(input) {
 	input.title = 'Relative luminance: ';
+	var sTitle = input.title;
 	
 	var color = input.color;
 	
 	if (input.color.alpha < 1) {
 		input.title += color.overlayOn(Color.BLACK).luminance + ' - ' + color.overlayOn(Color.WHITE).luminance;
+		sTitle  += color.overlayOn(Color.BLACK).luminance + ' - ' + color.overlayOn(Color.WHITE).luminance;
 	}
 	else {
 		input.title += color.luminance;
+		sTitle += color.luminance;
 	}
+
+	input.title = sTitle;
 }
 
 function update() {
