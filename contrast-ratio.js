@@ -291,6 +291,22 @@ window.decodeURIComponent = (function(){
 })();
 
 
+// There has got to be a better way to do this 
+function getLuminance(smee) {
+
+		background.value = smee;
+		colorChanged(background);
+		updateLuminance(background);
+
+		fLum = parseFloat(background.title);
+
+		if (fLum < .3) {var myFontcolor = '#fff'}
+		else {var myFontcolor = '#000'};
+
+		return(myFontcolor);
+}
+
+
 var sTable = '';
 
 function buildTable() {
@@ -308,33 +324,16 @@ function buildTable() {
 			sTable += '<tr><th></th>';
 			for (var b in aColor) {
 
-				//my GOD this has to be easier - setting input to get luminance
-				background.value = aColor[b];
-				colorChanged(background);
-				updateLuminance(background);
+				myFontcolor = getLuminance(aColor[b]);
 
-				fLum = parseFloat(background.title);
+				cellBackground = aColor[b].toUpperCase();
 
-				if (fLum < .3) {var myFontcolor = '#fff'}
-				else {var myFontcolor = '#000'};
-
-				sBackground = aColor[b].toUpperCase();
-
-				sTable += '<th class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[b] + '">'  + sBackground + '</th>';
+				sTable += '<th class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[b] + '">'  + cellBackground + '</th>';
 			}
 			sTable += '</tr>';
 		}
 
-		//my GOD this has to be easier - setting input to get luminance
-
-				background.value = aColor[i];
-				colorChanged(background);
-				updateLuminance(background);
-
-				fLum = parseFloat(background.title);
-
-				if (fLum < .3) {var myFontcolor = '#fff'}
-				else {var myFontcolor = '#000'};
+		myFontcolor = getLuminance(aColor[i]);
 
 		sBackground = aColor[i].toUpperCase();
 		sTable += '<tr><td class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[i] + '">' + sBackground + '</td>';
