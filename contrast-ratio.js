@@ -315,15 +315,29 @@ function buildTable() {
 
 				fLum = parseFloat(background.title);
 
-				if (fLum < .5) {var myFontcolor = '#fff'}
+				if (fLum < .3) {var myFontcolor = '#fff'}
 				else {var myFontcolor = '#000'};
 
-				sTable += '<th class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[b] + '">'  + aColor[b] + '</th>';
+				sBackground = aColor[b].toUpperCase();
+
+				sTable += '<th class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[b] + '">'  + sBackground + '</th>';
 			}
 			sTable += '</tr>';
 		}
 
-		sTable += '<tr><td class="mySquare" style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
+		//my GOD this has to be easier - setting input to get luminance
+
+				background.value = aColor[i];
+				colorChanged(background);
+				updateLuminance(background);
+
+				fLum = parseFloat(background.title);
+
+				if (fLum < .3) {var myFontcolor = '#fff'}
+				else {var myFontcolor = '#000'};
+
+		sBackground = aColor[i].toUpperCase();
+		sTable += '<tr><td class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[i] + '">' + sBackground + '</td>';
 
 		// for loop through each color
 		for (var c in aColor) {
