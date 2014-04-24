@@ -301,4 +301,9 @@ canvas {
 	border: 1px solid black;
 }
 
+.mySquare {
+	height:150px;
+	width:150px;
+}
+
 

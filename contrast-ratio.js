@@ -61,7 +61,8 @@ function rangeIntersect(min, max, upper, lower) {
 }
 
 function updateLuminance(input) {
-	input.title = 'Relative luminance: ';
+	//input.title = 'Relative luminance: ';
+	input.title = '';
 	var sTitle = input.title;
 	
 	var color = input.color;
@@ -83,8 +84,8 @@ function update() {
 		if (foreground.value !== foreground.defaultValue || background.value !== background.defaultValue) {
 			window.onhashchange = null;
 
-			location.hash = '#' + encodeURIComponent(foreground.value) + '-on-' + encodeURIComponent(background.value);
-			// #hsla(200.0%,0%,.7)-on-#eee
+			//bc location.hash = '#' + encodeURIComponent(foreground.value) + '-on-' + encodeURIComponent(background.value);
+			//note: #hsla(200.0%,0%,.7)-on-#eee
 			
 			
 			setTimeout(function() {
@@ -306,12 +307,23 @@ function buildTable() {
 		if (i==0) {
 			sTable += '<tr><th></th>';
 			for (var b in aColor) {
-				sTable += '<th style="background-color:' + aColor[b] + '">' + aColor[b] + '</th>';
+
+				//my GOD this has to be easier - setting input to get luminance
+				background.value = aColor[b];
+				colorChanged(background);
+				updateLuminance(background);
+
+				fLum = parseFloat(background.title);
+
+				if (fLum < .5) {var myFontcolor = '#fff'}
+				else {var myFontcolor = '#000'};
+
+				sTable += '<th class="mySquare" style="color:' + myFontcolor + ';background-color:' + aColor[b] + '">'  + aColor[b] + '</th>';
 			}
 			sTable += '</tr>';
 		}
 
-		sTable += '<tr><td style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
+		sTable += '<tr><td class="mySquare" style="background-color:' + aColor[i] + '">' + aColor[i] + '</td>';
 
 		// for loop through each color
 		for (var c in aColor) {
