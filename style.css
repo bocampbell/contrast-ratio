@@ -75,7 +75,7 @@ label {
 		}
 
 
-	input {
+	.background input, 	.foreground input  {
 		position: relative;
 		display: block;
 		min-width: 8em;
