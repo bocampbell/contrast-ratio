@@ -312,10 +312,19 @@ function getLuminance(smee) {
 
 
 var sTable = '';
+var ibmcolors = ',#666666';
+var ibmgrays = ',#cccccc';
 
 function buildTable() {
 	sTable = '<table>';
 
+
+  if(document.getElementById('ibmcolors').checked)
+     document.getElementById('allcolors').value += ibmcolors ;
+ 
+    if(document.getElementById('ibmgrays').checked)
+     document.getElementById('allcolors').value += ibmgrays ;
+ 
 	var aColor = document.getElementById('allcolors').value.split(/,(?![^(]*\))/g);
 	// use regex to split instead for commas inside of parenthesis
 	// /,(?![^(]*\))/g
