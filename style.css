@@ -292,13 +292,13 @@ canvas {
 #myContainer table {
 	min-width: 400px;
 	background: #fff;
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 	border-collapse:collapse;
 	margin: 0 auto;
 }
 
 #myContainer table, #myContainer th, #myContainer td {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 .mySquare {
@@ -306,36 +306,21 @@ canvas {
 	width:150px;*/}
 
 th {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
+  /* Something you can count on */
+  height: 140px;
+  white-space: nowrap;
+}
 
-<<<<<<< HEAD
 th > div {
   transform: 
     /* Magic Numbers */
     translate(25px, 51px)
     /* 45 is really 360 - 45 */
-    rotate(90deg);
+    rotate(315deg);
   width: 30px;
 }
 th > div > span {
   border-bottom: 1px solid #ccc;
   padding: 5px 10px;
 }
-=======
-  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-
-  /* Should be unset in IE9+ I think. */
- filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-} 
->>>>>>> FETCH_HEAD
-
 
