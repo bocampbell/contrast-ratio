@@ -316,11 +316,7 @@ th > div {
     /* Magic Numbers */
     translate(25px, 51px)
     /* 45 is really 360 - 45 */
-<<<<<<< HEAD
     rotate(270deg);
-=======
-    rotate(315deg);
->>>>>>> FETCH_HEAD
   width: 30px;
 }
 th > div > span {
