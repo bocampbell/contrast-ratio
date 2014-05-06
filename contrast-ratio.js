@@ -312,7 +312,7 @@ function getLuminance(smee) {
 
 
 var sTable = '';
-var ibmcolors = ',#666666';
+var ibmcolors = ',green';
 var ibmgrays = ',#cccccc';
 
 function buildTable() {
