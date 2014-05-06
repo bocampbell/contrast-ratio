@@ -316,7 +316,7 @@ th > div {
     /* Magic Numbers */
     translate(25px, 51px)
     /* 45 is really 360 - 45 */
-    rotate(315deg);
+    rotate(90deg);
   width: 30px;
 }
 th > div > span {

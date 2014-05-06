@@ -341,7 +341,7 @@ function buildTable() {
 
 				cellBackground = aColor[b].toUpperCase();
 
-				sTable += '<th class="mySquare" style="color:' + myFontcolor + '"><div style="background-color:' +  aColor[b] + '"><span>'  + cellBackground + '</span></div></th>';
+				sTable += '<th class="mySquare" style="color:' + myFontcolor + '"><div><span style="background-color:' +  aColor[b] + '">'  + cellBackground + '</span></div></th>';
 			}
 			sTable += '</tr>';
 		}
