@@ -65,8 +65,12 @@ function updateLuminance(input) {
 	input.title = '';
 	var sTitle = input.title;
 	
+	// this puts ALL colors in RGB by pulling them back from the input
+	// color laundering
 	var color = input.color;
-	
+	//document.write(color);
+
+	//bc find out wtf alpha is here... opacity?
 	if (input.color.alpha < 1) {
 		input.title += color.overlayOn(Color.BLACK).luminance + ' - ' + color.overlayOn(Color.WHITE).luminance;
 		sTitle  += color.overlayOn(Color.BLACK).luminance + ' - ' + color.overlayOn(Color.WHITE).luminance;
@@ -201,7 +205,7 @@ function update() {
 		ctx.fillStyle = foreground.color + '';
 		ctx.fillRect(8, 0, 8, 16);
 		
-		$('link[rel="shortcut icon"]').setAttribute('href', canvas.toDataURL());
+		//bc can't run this offline ---- $('link[rel="shortcut icon"]').setAttribute('href', canvas.toDataURL());
 	}
 }
 
@@ -300,7 +304,7 @@ function getLuminance(smee) {
 
 		fLum = parseFloat(background.title);
 
-		if (fLum < .3) {var myFontcolor = '#fff'}
+		if (fLum < .2) {var myFontcolor = '#fff'}
 		else {var myFontcolor = '#000'};
 
 		return(myFontcolor);
