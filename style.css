@@ -307,8 +307,8 @@ canvas {
 
 #myContainer td { 
 	border: 1px solid black;
-	max-width: 100px; 
-	min-width: 100px; 
+	/*max-width: 100px; 
+	min-width: 100px; */
 }
 
 .mySquare {
@@ -319,22 +319,22 @@ canvas {
 
 th {
   /* Something you can count on */
-  /*height: 100px;*/
+  height: 40px;
   white-space: nowrap;
-}
-
-th:hover, tr:hover {
-	background-color: #f1f1f1;
+  border: 1px solid black;
 }
 
 th > div {
-	/*height: 100px; */
+  transform: 
+    /* Magic Numbers */
+    /*translate(25px, 51px)*/
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+  /*width: 30px;*/
 }
 
 th > div > span {
-	width:100%;
-	/*border-bottom: 1px solid #ccc; */ 
-	/*padding: 5px 10px; */ 
-	height: 100%; 
-	display: block;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
 }
+

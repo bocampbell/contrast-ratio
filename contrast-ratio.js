@@ -329,11 +329,17 @@ function buildTable() {
       aColor = aColor.concat(aIbmgrays);
 
 	var x = aColor.length
-	
+
 	for (var i=0;i<x;i++) {
 
 		// build header row
 		if (i==0) {
+
+			for(var b in aColor) {
+				sTable += '<colgroup></colgroup>'
+			}
+
+
 			sTable += '<tr><th></th>';
 			for (var b in aColor) {
 
