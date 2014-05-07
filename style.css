@@ -317,23 +317,25 @@ canvas {
 	padding: 0;
 }
 
-th {
+.slim {width:50px;}
+
+tr {height:50px;}
+
+th.rotate {
   /* Something you can count on */
-  height: 40px;
+  height: 140px;
   white-space: nowrap;
-  border: 1px solid black;
 }
 
-th > div {
+th.rotate > div {
   transform: 
     /* Magic Numbers */
-    /*translate(25px, 51px)*/
+    translate(34px, 49px)
     /* 45 is really 360 - 45 */
-    rotate(270deg);
-  /*width: 30px;*/
+    rotate(315deg);
+  width: 30px;
 }
-
-th > div > span {
+th.rotate > div > span {
   border-bottom: 1px solid #ccc;
   padding: 5px 10px;
 }

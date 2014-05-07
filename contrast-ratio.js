@@ -336,7 +336,12 @@ function buildTable() {
 		if (i==0) {
 
 			for(var b in aColor) {
-				sTable += '<colgroup></colgroup>'
+				if (b==0) {
+					sTable += '<colgroup></colgroup><colgroup class="slim"></colgroup>'
+				}
+				else {
+					sTable += '<colgroup class="slim"></colgroup>'
+				}
 			}
 
 
@@ -347,9 +352,23 @@ function buildTable() {
 
 				cellBackground = aColor[b].toUpperCase();
 
-				sTable += '<th class="mySquare" style="color:' + myFontcolor + '"><div><span style="background-color:' +  aColor[b] + '">'  + cellBackground + '</span></div></th>';
+				sTable += '<th class="mySquare rotate"><div><span>'  + cellBackground + '</span></div></th>';
 			}
 			sTable += '</tr>';
+
+			sTable += '<tr><td></td>';
+			for (var b in aColor) {
+
+				myFontcolor = getLuminance(aColor[b]);
+
+				cellBackground = aColor[b].toUpperCase();
+
+				sTable += '<td class="mySquare" style="color:' + myFontcolor + ';background-color:' +  aColor[b] + '">&nbsp;</td>';
+			}
+			sTable += '</tr>';
+
+
+
 		}
 
 		myFontcolor = getLuminance(aColor[i]);
