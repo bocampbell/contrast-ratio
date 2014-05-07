@@ -298,7 +298,7 @@ canvas {
 }
 
 #myContainer table, #myContainer th, #myContainer td {
-	/*border: 1px solid black;*/
+	border: 1px solid black;
 }
 
 #myContainer td {border: 1px solid black;}
@@ -309,19 +309,20 @@ canvas {
 
 th {
   /* Something you can count on */
-  height: 140px;
+  height: 80px;
   white-space: nowrap;
 }
 
 th > div {
   transform: 
     /* Magic Numbers */
-    translate(25px, 51px)
+    /*translate(25px, 51px)*/
     /* 45 is really 360 - 45 */
     rotate(270deg);
-  width: 30px;
+  width: 50px;
 }
 th > div > span {
+	width:100%;
   border-bottom: 1px solid #ccc;
   padding: 5px 10px;
 }
