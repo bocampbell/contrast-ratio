@@ -31,8 +31,5 @@ for (var i=0;i<x;i++)
 	
 	
 	}
-	
-	
-$('#myContainer th').html($('#myContainer th').text().replace(/(.)/g,"$1<br />"));
 
 
