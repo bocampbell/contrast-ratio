@@ -312,15 +312,26 @@ function getLuminance(smee) {
 
 
 var sTable = '';
+var aTestlist = ["#ffe14f","#ffcf01","#fdb813","#f19027","#dd731c","#b8461b"];
 var aIbmcolors = ["#ffe14f","#ffcf01","#fdb813","#f19027","#dd731c","#b8461b","#f04e37","#d9182d","#a91024","#f389af","#ee3d96","#ba006e","#ab1a86","#7f1c7d","#3b0256","#82d1f5","#00b2ef","#00648d","#00b0da","#008abf","#003f69","#00a6a0","#007670","#006059","#8cc63f","#17af4b","#008A52","#a5a215","#838329","#594f13"];
 var aIbmgrays = ["#f1f1f2","#e6e7e8","#d0d2d3","#bbbdbf","#a6a8ab","#929497","#808184","#6d6e70","#58595b","#404041","#231f20","#f5f5f5","#e5e5e3","#d0cfce","#bcbbb9","#a8a7a5","#959492","#83827f","#72716e","#605f5c","#4d4c48","#383633","#efeff1","#e3e4e6","#cdced2","#b8babe","#a4a6ab","#929399","#808287","#6f7076","#4c4d53","#393a3f"];
 
 function buildTable() {
 	sTable = '<table>';
 
-	var aColor = document.getElementById('allcolors').value.split(/,(?![^(]*\))/g);
-	// use regex to split instead for commas inside of parenthesis
-	// /,(?![^(]*\))/g
+	if (document.getElementById('allcolors').value > '') {
+		// need to also see if checkboxes are checked so we don't return w/o those values
+		// regex
+		var aColor = document.getElementById('allcolors').value.split(/,(?![^(]*\))/g);
+	}
+	else{
+		return;
+	}
+
+	if(aColor.length == 0) {alert('yo');}
+
+    if(document.getElementById('testcolors').checked)
+      aColor = aColor.concat(aTestlist);
 
     if(document.getElementById('ibmcolors').checked)
       aColor = aColor.concat(aIbmcolors);
@@ -344,7 +355,6 @@ function buildTable() {
 				}
 			}
 
-
 			sTable += '<tr><th></th>';
 			for (var b in aColor) {
 
@@ -366,8 +376,6 @@ function buildTable() {
 				sTable += '<td class="mySquare" style="color:' + myFontcolor + ';background-color:' +  aColor[b] + '">&nbsp;</td>';
 			}
 			sTable += '</tr>';
-
-
 
 		}
 

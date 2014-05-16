@@ -6,7 +6,7 @@ html {
 
 body {
 	margin: auto;
-	text-align: center;
+	/*text-align: center;*/
 	font: 120%/1.2 sans-serif;
 	color: black;
 	padding: 40px;
@@ -286,7 +286,7 @@ canvas {
 }
 
 #myContainer {
-	margin-top:100px;
+	margin-top:0px;
 }
 
 #myContainer table {
@@ -325,6 +325,7 @@ th.rotate {
   /* Something you can count on */
   height: 140px;
   white-space: nowrap;
+  min-width: 50px;
 }
 
 th.rotate > div {
@@ -336,7 +337,7 @@ th.rotate > div {
   width: 30px;
 }
 th.rotate > div > span {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #000;
   padding: 5px 10px;
 }
 
