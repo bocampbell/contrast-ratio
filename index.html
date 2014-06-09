@@ -44,20 +44,31 @@
 	</section>
 </div>
 
+
+
 <div id="bos">
 
-	<p>
-		Enter a list of colors separated by commas</br>
-		<textarea type="textarea" id="allcolors" style="height:100;width:200">blue,orange,yellow,red,#666,#CCC</textarea>
-		<button id="btnColor">Go</button>
-		</form>
-		</br>
-		<input type="checkbox" id="ibmcolors" name="ibmcolors" value="ibmcolors">Include IBM Design Language Colors</br>
-		<input type="checkbox" id="ibmgrays" name="ibmgrays" value="ibmgrays">Include IBM Design Language Grays</br>
+	<div style="float:left;padding:20px;">
+		Enter colors</br>
+		<textarea type="textarea" id="allcolors" style="height:200px;width:200px">blue,orange,yellow,red,#666,#CCC</textarea>
+		
+	</div>
+	<div style="float:left;padding:20px">
+		Select Palettes</br>
+		<input type="checkbox" id="whiteblack" status="checked" name="whiteblack" value="whiteblack">Include White and Black</br>
+		<input type="checkbox" id="ibmcolors" name="ibmcolors" value="ibmcolors">IBM Design Language Colors</br>
+		<input type="checkbox" id="ibmgrays" name="ibmgrays" value="ibmgrays">IBM Design Language Grays</br>
+		<input type="checkbox" id="bluemixcolors" name="bluemixolors" value="bluemixcolors">Bluemix Colors</br>
+		<input type="checkbox" id="bluemixgrays" name="bluemixgrays" value="bluemixgrays">Bluemix Grays</br>
 		<input type="checkbox" id="testcolors" name="testcolors" value="testcolors">Include Test Colors</br>
-	</p>
-<section id="myContainer" class="tableme"></section>
+	</div>
 
+	<div style="float:left;padding:20px">
+			<button id="btnColor" style="width:120px;">Go</button>
+	</div>
+	<div style="float:left;">
+		<section id="myContainer" class="tableme"></section>
+	</div>
 
 </div>
 
