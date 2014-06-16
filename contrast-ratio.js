@@ -124,11 +124,11 @@ function update() {
 		
 		$('strong', output).textContent = contrast.ratio;
 
-		sTable += contrast.ratio;
+		sTable += '<div style="height:50%;width:100%;float:left;">' + contrast.ratio + '</div>';
 
 		if ((contrast.ratio >= 3.1) & (contrast.ratio < 4.5))
 			{
-				sTable += "</br>A"
+				sTable += '<div style="height:50%;width:100%;float:left;background-color:#cccccc;">A</div>'
 			};
 
 		if (contrast.ratio >= 4.5)
