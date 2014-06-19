@@ -1,59 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-
-	#tooltip1 { 
-		position: relative; 
-	}
-
-	#tooltip1 a {
-		text-decoration: none;
-		color: #000;
-	}
-
-	#tooltip1 a span { 
-		display: none; 
-		color: #000; 
-	}
-
-	#tooltip1 a:hover span { 
-		display: block; 
-		position: absolute; 
-		width: 200px; 
-		background: #000; 
-		height: 50px; 
-		left: 100px; 
-		top: 0px; 
-		color: #FFFFFF; 
-		padding: 0 5px; 
-	}
-
-	table {
-		border: 1px solid #000;
-		border-collapse: collapse;
-	}
-
-	table td, table th {
-	  border: 1px solid black;
-	}
-
-	</style>
 </head>
 <body>
-
-	<table style="width:300px">
-	<tr>
-	  <td>1</td>
-	  <td id="tooltip1"><a>21<span>This is an example</span></a></td> 
-	  <td>50</td>
-	</tr>
-	<tr>
-	  <td>Eve</td>
-	  <td>Jackson</td> 
-	  <td>94</td>
-	</tr>
-	</table>
-
+<div id="tooltip0" style="height:100px;width:100px;background-color:yellow">This is an example 1</div>
+<div id="tooltip1" style="height:100px;width:100px;background-color:red">This is an example 2</div>
 </body>
 </html>
+
+
+<script type="text/javascript">
+
+var divColors = [["tooltip1","yellow","foregroundrgb1"],["tooltip2","red","foregroundrgb2"]];
+
+document.getElementById("tooltip0").onmouseover = function() {ColortheDiv(0)};
+document.getElementById("tooltip1").onmouseover = function() {ColortheDiv(1)};
+
+function ColortheDiv(sID){
+
+
+	alert(divColors[sID][1]);
+
+}
+
+</script>
