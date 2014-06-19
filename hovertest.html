@@ -3,18 +3,18 @@
 <head>
 </head>
 <body>
-<div id="tooltip0" style="height:100px;width:100px;background-color:yellow">This is an example 1</div>
-<div id="tooltip1" style="height:100px;width:100px;background-color:red">This is an example 2</div>
+<div id="cell0" style="height:100px;width:100px;background-color:yellow">This is an example 1</div>
+<div id="cell1" style="height:100px;width:100px;background-color:red">This is an example 2</div>
 </body>
 </html>
 
 
 <script type="text/javascript">
 
-var divColors = [["tooltip0","yellow","foregroundrgb0"],["tooltip1","red","foregroundrgb1"]];
+var divColors = [["cell0","yellow","foregroundrgb0"],["cell1","red","foregroundrgb1"]];
 
-document.getElementById("tooltip0").onmouseover = function() {ColortheDiv(0)};
-document.getElementById("tooltip1").onmouseover = function() {ColortheDiv(1)};
+document.getElementById("cell0").onmouseover = function() {ColortheDiv(0)};
+document.getElementById("cell1").onmouseover = function() {ColortheDiv(1)};
 
 function ColortheDiv(sID){
 
