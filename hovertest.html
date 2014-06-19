@@ -3,22 +3,22 @@
 <head>
 </head>
 <body>
-<div id="cell0" style="height:100px;width:100px;background-color:yellow">This is an example 1</div>
-<div id="cell1" style="height:100px;width:100px;background-color:red">This is an example 2</div>
+<div id="cell0" style="height:100px;width:100px;background-color:yellow;color:black">This is an example 1</div>
+<div id="cell1" style="height:100px;width:100px;background-color:green;color:white">This is an example 2</div>
 </body>
 </html>
 
 
 <script type="text/javascript">
 
-var divColors = [["cell0","yellow","foregroundrgb0"],["cell1","red","foregroundrgb1"]];
+var divColors = [["cell0","yellow","black"],["cell1","green","white"]];
 
 document.getElementById("cell0").onmouseover = function() {ColortheDiv(0)};
 document.getElementById("cell1").onmouseover = function() {ColortheDiv(1)};
 
 function ColortheDiv(sID){
 
-	alert(divColors[sID][1]);
+	alert("foreground=" + divColors[sID][1] + " AND " + "background=" + divColors[sID][2]);
 	//show the tooltip custom div here with the colors for the appropriate cell from the array
 
 }
