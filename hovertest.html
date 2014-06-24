@@ -5,15 +5,17 @@
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 
 <style>
-.td {height:50;width:50;}
+td {height:50px;width:50px;};
+
+
 </style>
 </head>
 <body>
 <table id="myTable">
-<tr><td class="lookatme">1</td>
-	<td class="lookatme">2</td>
-<tr><td class="lookatme">3</td>
-	<td class="lookatme">4</td>
+<tr><td class="lookatme" style='background-color:red'>1</td>
+	<td class="lookatme" style='background-color:red'>2</td>
+<tr><td class="lookatme" style='background-color:red'>3</td>
+	<td class="lookatme" style='background-color:red'>4</td>
 </td></tr></table>
 
 <div id="which">What are we in?</div>
@@ -23,34 +25,17 @@
 
 <script type="text/javascript">
 
-var divColors = [["cell0","yellow","black"],["cell1","green","white"]];
-
-// document.getElementById("cell0").onmouseover = function() {ColortheDiv(0)};
-// document.getElementById("cell1").onmouseover = function() {ColortheDiv(1)};
-
-function ColortheDiv(sID){
-
-	alert("background=" + divColors[sID][1] + " AND " + "foreground=" + divColors[sID][2]);
-	//show the tooltip custom div here with the colors for the appropriate cell from the array
-	//show div
-	//locate div by cursor 
-	//create inner html
-	//style background with [sId][1]
-	//style foreground with [sId][2
-}
-
 $('#myTable tr td.lookatme').on('mouseenter',function(){
  
 	//find my cell index
-	var local_cell = $(this).parent().children("td").index(this);
-	var row_cell = $(this).closest("tbody").children("tr").index($(this).closest("tr"));
-	document.getElementById('which').innerHTML = local_cell + " : " + row_cell;
+	var col = $(this).parent().children("td").index(this);
+	var row = $(this).closest("tbody").children("tr").index($(this).closest("tr"));
 
+	var topcolor = $('table tr').eq(1).find('td').eq(col).name;
+	var leftcolor = $('table tr').eq(row).find('td').eq(0).html();
 
-	//find the left color
+	document.getElementById('which').innerHTML = topcolor + " : " + leftcolor;
 
-    $('body').css( "background-color", "yellow");
-    this.style.color = "red";
 });
 
 $('#myTable tr td.lookatme').on('mouseleave',function(){
