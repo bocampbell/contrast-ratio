@@ -5,20 +5,20 @@
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 
 <style>
-td {height:50px;width:50px;};
+td {height:50px;width:50px;color:#000000;};
 
 
 </style>
 </head>
 <body>
 <table id="myTable">
-<tr><td class="lookatme" style='background-color:red'>1</td>
-	<td class="lookatme" style='background-color:red'>2</td>
-<tr><td class="lookatme" style='background-color:red'>3</td>
-	<td class="lookatme" style='background-color:red'>4</td>
+<tr><td class="lookatme" style="background-color:#000000">1</td>
+	<td class="lookatme" style="background-color:red">2</td>
+<tr><td class="lookatme" style="background-color:yellow">3</td>
+	<td class="lookatme" style="background-color:#ffffff">4</td>
 </td></tr></table>
 
-<div id="which">What are we in?</div>
+<div id="which" style="height:100px;width:100px;">What are we in?</div>
 </body>
 </html>
 
@@ -31,10 +31,12 @@ $('#myTable tr td.lookatme').on('mouseenter',function(){
 	var col = $(this).parent().children("td").index(this);
 	var row = $(this).closest("tbody").children("tr").index($(this).closest("tr"));
 
-	var topcolor = $('table tr').eq(1).find('td').eq(col).name;
-	var leftcolor = $('table tr').eq(row).find('td').eq(0).html();
+	var topcolor = $('table tr').eq(row).find('td').eq(0).css("background-color");
+	var leftcolor = $('table tr').eq(0).find('td').eq(col).css("background-color");
 
-	document.getElementById('which').innerHTML = topcolor + " : " + leftcolor;
+	document.getElementById('which').innerHTML = "row:" + row + "  col:" + col + "  topcolor:" + topcolor + "    leftcolor:" + leftcolor;
+	document.getElementById('which').style["background"] = topcolor;
+	document.getElementById('which').style["color"] = leftcolor;
 
 });
 
