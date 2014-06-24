@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+
 </head>
 <body>
-<div id="cell0" style="height:100px;width:100px;background-color:yellow;color:black">This is an example 1</div>
+<table id="myTable">
+<tr><td class="lookatme" >Test
+<div id="cell0"style="height:100px;width:100px;background-color:yellow;color:black">This is an example 1</div>
+</td><td class="lookatme">Test
 <div id="cell1" style="height:100px;width:100px;background-color:green;color:white">This is an example 2</div>
+</td></tr></table>
 </body>
 </html>
 
@@ -13,8 +20,8 @@
 
 var divColors = [["cell0","yellow","black"],["cell1","green","white"]];
 
-document.getElementById("cell0").onmouseover = function() {ColortheDiv(0)};
-document.getElementById("cell1").onmouseover = function() {ColortheDiv(1)};
+// document.getElementById("cell0").onmouseover = function() {ColortheDiv(0)};
+// document.getElementById("cell1").onmouseover = function() {ColortheDiv(1)};
 
 function ColortheDiv(sID){
 
@@ -24,8 +31,17 @@ function ColortheDiv(sID){
 	//locate div by cursor 
 	//create inner html
 	//style background with [sId][1]
-	//style foreground with [sId][2]
-
+	//style foreground with [sId][2
 }
+
+$('#myTable tr td.lookatme').on('mouseenter',function(){
+    $('body').css( "background-color", "yellow");
+    this.style.color = "red";
+});
+
+$('#myTable tr td.lookatme').on('mouseleave',function(){
+   $('body').css( "background-color", "white");
+   this.style.color = "white";
+});
 
 </script>
