@@ -324,6 +324,7 @@ function getLuminance(smee) {
 }
 
 
+
 var sTable = '';
 
 function buildTable() {
@@ -335,7 +336,7 @@ function buildTable() {
 	var aIbmcolors = ["#ffe14f","#ffcf01","#fdb813","#f19027","#dd731c","#b8461b","#f04e37","#d9182d","#a91024","#f389af","#ee3d96","#ba006e","#ab1a86","#7f1c7d","#3b0256","#82d1f5","#00b2ef","#00648d","#00b0da","#008abf","#003f69","#00a6a0","#007670","#006059","#8cc63f","#17af4b","#008A52","#a5a215","#838329","#594f13"];
 	var aIbmgrays = ["#f1f1f2","#e6e7e8","#d0d2d3","#bbbdbf","#a6a8ab","#929497","#808184","#6d6e70","#58595b","#404041","#231f20","#f5f5f5","#e5e5e3","#d0cfce","#bcbbb9","#a8a7a5","#959492","#83827f","#72716e","#605f5c","#4d4c48","#383633","#efeff1","#e3e4e6","#cdced2","#b8babe","#a4a6ab","#929399","#808287","#6f7076","#4c4d53","#393a3f"];
 	
-	sTable = '<table>';
+	sTable = '<table id="myTable">';
 
 	if (document.getElementById('allcolors').value > '') {
 		// need to also see if checkboxes are checked so we don't return w/o those values
@@ -416,7 +417,7 @@ if(aColor.length == 0) {alert('yo');}
 		// for loop through each color
 		for (var c in aColor) {
 			 
-			sTable += '<td>';
+			sTable += '<td class="pleb">';
 			
 			// fill input boxes with values since the function wants them this way
 			
@@ -445,6 +446,29 @@ if(aColor.length == 0) {alert('yo');}
 
 document.getElementById('btnColor').onclick = buildTable;
 
+//function to find the table cell you are hovering on and change the sample area
+//jQuery('#myTable tr td.pleb').on('mouseenter',function(){
+	jQuery('body').on('mouseenter','#myTable tr td.pleb', function() {
+
+	//alert(jQuery(this).parent().children("td").index(this));
+ 
+	//find my cell index
+	var col = jQuery(this).parent().children("td").index(this);
+	var row = jQuery(this).closest("tbody").children("tr").index(jQuery(this).closest("tr"));
+
+	var fg = jQuery('table tr').eq(row).find('td').eq(0).css("background-color");
+	var bg = jQuery('table tr').eq(1).find('td').eq(col).css("background-color");
+
+	//document.getElementById('sample').innerHTML = "row:" + row + "  col:" + col + "  topcolor:" + topcolor + "    leftcolor:" + leftcolor;
+	document.getElementById('sample').style["background"] = fg;
+	document.getElementById('sample').style["color"] = bg;
+
+});
+
+jQuery('#myTable tr td.pleb').on('mouseleave',function(){
+   //$('body').css( "background-color", "white");
+   //this.style.color = "white";
+});
 
 
 
